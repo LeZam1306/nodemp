@@ -1,4 +1,4 @@
-export const router = (arg) => {
+export const router = (arg: string[]) => {
   const command = arg[0];
   const param = arg[1];
 

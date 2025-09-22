@@ -2,5 +2,11 @@
   "name": "nodemp",
   "version": "1.0.0",
   "type": "module",
-  "bin": "./bin/nodemp.js"
+  "bin": "./dist/bin/nodemp.js",
+  "scripts": {
+    "watch": "tsc --watch"
+  },
+  "devDependencies": {
+    "@types/node": "^24.5.2"
+  }
 }
