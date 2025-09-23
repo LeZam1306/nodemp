@@ -7,11 +7,18 @@
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
-    "module": "nodenext",
+    "module": "ESNext",
+    "moduleResolution": "node",
     "target": "esnext",
-    // For nodejs:
-    "lib": ["esnext"],
     "types": ["node"],
+    "baseUrl": "./",
+    "resolveJsonModule": true,
+    "allowJs": true,
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    // For nodejs:
+    // "lib": ["esnext"],
+    // "types": ["node"],
     // and npm install -D @types/node
 
     // Other Outputs
@@ -39,9 +46,6 @@
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
-
-    "allowImportingTsExtensions": false,
-    "noEmit": false
-  },
-  "exclude": ["src/templates/**/*", "dist/**/*"]
+    "esModuleInterop": true
+  }
 }

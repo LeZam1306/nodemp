@@ -1,13 +1,16 @@
+import { createProject } from "./commands/createProject.js";
+
 export const router = (arg: string[]) => {
   const command = arg[0];
   const param = arg[1];
 
   switch (command) {
-    case "create:component":
+    case "create:project":
       if (!param) {
-        console.log('The "name" parameter is required');
-      } else {
+        console.log('missing "name" parameter');
+        break;
       }
+      createProject(param);
       break;
     default:
       console.log("unknown command");
