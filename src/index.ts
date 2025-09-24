@@ -6,14 +6,14 @@ export const router = (arg: string[]) => {
   const param = arg.slice(1);
 
   switch (command) {
-    case "create:project":
+    case "c:project":
       if (!param[0]) {
         console.log('missing "name" parameter"');
         break;
       }
       createProject(param);
       break;
-    case "create:endpoint":
+    case "c:endpoint":
       if (param.length < 2) {
         console.log('2 parameters missing "name" "path"');
         break;
