@@ -3,6 +3,8 @@ import cors from 'cors';
 import type { Application } from 'express';
 import express from 'express';
 import mongoose from 'mongoose';
+import type { Controller } from './controllers/Controller';
+//import { __CONTROLLER__Controller } from './controllers/__CONTROLLER__Controller'
 
 const connectDB = async () => {
   try {
@@ -28,7 +30,13 @@ app.use(
   }),
 );
 
-__NewRoute__
+const controllers: Controller[] = [
+  //,__CONTROLLER__Controller
+]
+
+controllers.forEach((controller) => {
+  app.use(controller.path, controller.router);
+})
 
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);

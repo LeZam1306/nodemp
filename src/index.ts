@@ -12,6 +12,13 @@ export const router = (arg: string[]) => {
       }
       createProject(param);
       break;
+    case "create:endpoint":
+      if (!param) {
+        console.log('missing "name" parameter');
+        break;
+      }
+
+      break;
     default:
       console.log("unknown command");
       break;
