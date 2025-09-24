@@ -1,6 +1,6 @@
 import type { NextFunction, Response } from 'express';
 import Jwt from 'jsonwebtoken';
-import { ResponseObj } from '../src/lib/responseBuilder.ts';
+import { ResponseObj } from '../lib/responseBuilder.ts;
 import type { AuthRequest } from '../types/AuthRequest.interface.ts';
 
 type DecodedToken = { userId: string };

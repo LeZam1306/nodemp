@@ -3,8 +3,8 @@ import cors from 'cors';
 import type { Application } from 'express';
 import express from 'express';
 import mongoose from 'mongoose';
-import type { Controller } from './controllers/Controller';
-//import { __CONTROLLER__Controller } from './controllers/__CONTROLLER__Controller'
+import type { Controller } from './controllers/Controller.ts';
+//import-route-injection
 
 const connectDB = async () => {
   try {
@@ -31,7 +31,7 @@ app.use(
 );
 
 const controllers: Controller[] = [
-  //,__CONTROLLER__Controller
+  //controller-injection
 ]
 
 controllers.forEach((controller) => {

@@ -2,7 +2,8 @@ import { spawnSync } from "child_process";
 import fs from "fs";
 import path from "path";
 
-export const createProject = (param: string) => {
+export const createProject = (arg: string[]) => {
+  const param = arg[0] as string;
   try {
     const filesRoot = fs.readdirSync(".");
     //Verify if the name does exist in current folder
@@ -19,6 +20,7 @@ export const createProject = (param: string) => {
     //generate the template
     fs.cpSync(templatePath, `./${param}`, { recursive: true });
 
+    //install dependences
     spawnSync("npm", ["install"], {
       cwd: `./${param}`,
       stdio: "inherit",
