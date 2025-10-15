@@ -53,7 +53,6 @@ export const createEndpoint = (arg: string[]) => {
       `//controller-injection\n new ${nameEndpoint}Controller(),`
     );
     fs.writeFileSync("./src/index.ts", content);
-    console.log(content);
   } catch (error) {
     console.log(
       error instanceof Error ? error.message : "An unknown error has occurred"
